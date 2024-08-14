@@ -1,0 +1,21 @@
+def convert_to_indian_currency(num):
+
+    num_str = str(num)
+
+
+    if len(num_str) > 3:
+        last_three = num_str[-3:]
+        remaining = num_str[:-3]
+    else:
+        return num_str
+
+
+    remaining = ",".join([remaining[max(i-2, 0):i] for i in range(len(remaining), 0, -2)][::-1])
+
+
+    return f"{remaining},{last_three}"
+
+
+num = int(input())
+formatted = convert_to_indian_currency(num)
+print(formatted) 

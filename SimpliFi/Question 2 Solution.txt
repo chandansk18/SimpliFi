@@ -1,0 +1,17 @@
+def min_players_to_shot(T):
+    for _ in range(T):
+        N, K = map(int, input().split())
+        heights = list(map(int, input().split()))
+        
+        count = 0
+        max_height = K
+        
+        for height in heights:
+            if height > max_height:
+                count += 1
+                max_height = height
+        
+        print(count)
+
+T = int(input())
+min_players_to_shot(T)
